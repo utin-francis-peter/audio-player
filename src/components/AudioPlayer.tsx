@@ -2,6 +2,7 @@
 
 import ReactPlayer from "react-player";
 import { useRef, useState } from "react";
+import { AudioDetails } from "./AudioDetails";
 
 type Props = {
   url: string;
@@ -67,6 +68,10 @@ export const AudioPlayer = ({ url, title, author, thumbnail }: Props) => {
         onProgress={handleProgress}
         onDuration={handleDuration}
       />
+
+      <div className="shadow rounded-xl">
+        <AudioDetails title={title} author={author} thumbnail={thumbnail} />
+      </div>
     </div>
   );
 };
